@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+    <div class="col-lg-6">
+      <h1 class="text-center">Formulario de captura de datos</h1>
+  
+      <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+        <div class="mb-3">
+          <label for="farmacia" class="form-label">Farmacia:</label>
+          <select id="farmacia" name="farmacia" class="form-select" ngModel required>
+            <option value="" disabled selected>Selecciona una farmacia</option>
+            <option value="Farmacia 1">Farmacia 1</option>
+            <option value="Farmacia 2">Farmacia 2</option>
+            <option value="Farmacia 3">Farmacia 3</option>
+            <option value="Farmacia 4">Farmacia 4</option>
+          </select>
+        </div>
+  
+        <div class="mb-3">
+          <label for="clave" class="form-label">Clave:</label>
+          <input type="text" id="clave" name="clave" class="form-control" ngModel required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción:</label>
+          <input type="text" id="descripcion" name="descripcion" class="form-control" ngModel required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="lote" class="form-label">Lote:</label>
+          <input type="text" id="lote" name="lote" class="form-control" ngModel required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="caducidad" class="form-label">Caducidad:</label>
+          <input type="text" id="caducidad" name="caducidad" class="form-control" ngModel required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="cantidad" class="form-label">Cantidad:</label>
+          <input type="number" id="cantidad" name="cantidad" class="form-control" ngModel required>
+        </div>
+  
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Enviar</button>
+  
+        <div class="d-flex justify-content-center mt-3" *ngIf="myForm.submitted">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
